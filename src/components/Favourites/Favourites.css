@@ -1,0 +1,107 @@
+.favourites{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    color: white;
+    justify-content: left;
+}
+
+.favourites h2{
+    font-size: 2.5em;
+    margin-bottom: -40px;
+}
+
+.games{
+    display: flex;
+    flex-direction: row;
+    gap: 235px;
+    align-items: center;
+    min-height: 100vh;
+    perspective: 1000px;
+    margin-bottom: -100px;
+}
+
+.RDR2{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    transform-style: preserve-3d;
+}
+
+.RDR2::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    transition-duration: 0.4s;
+}
+
+.RDR2:hover::before{
+    opacity: 1;
+}
+
+.RDR2::after{
+    content: "";
+    position: absolute;
+    inset: 80% 0.5rem 0.5rem;
+    translate: 0;
+    transform: translateZ(-100px);
+    background: black;
+    filter: blur(1rem);
+    rotate: x 20deg;
+    z-index: 1;
+    transition-duration: 0.4s;
+}
+
+.RDR2:hover::after{
+    rotate: x 20deg;
+    translate: 0 20px;
+}
+
+.fav_logo{
+    position: absolute;
+    z-index: 1000;
+    filter: invert(0);
+    margin-inline: auto;
+    inset: auto 0 0.5rem;
+    transform: translateY(0rem);
+    transition-duration: 0.5s;
+
+}
+
+.RDR2:hover .fav_logo{
+    transform: translateY(-1rem) translateZ(20px);
+    rotate: x 20deg
+}
+
+
+.front-image{
+    position: absolute;
+    scale: 1.125;
+    transform-origin: bottom;
+    z-index: 100;
+    opacity: 0;
+    transition: var(400ms);
+}
+
+.RDR2:hover .front-image{
+    opacity: 1;
+    transform: translateY(-2rem);
+    transition-duration: 0.5s;
+}
+
+.bg-image{
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    transition-duration: 0.4s;
+}
+.RDR2:hover .bg-image{    
+    transform: translateY(-1rem) translateZ(-50px);
+    rotate: x 25deg ;
+    filter: brightness(50%);
+}
+
+
+
+  
